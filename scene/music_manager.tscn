@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://juwgowkenmpd"]
+
+[ext_resource type="AudioStream" uid="uid://sxvy1d2x0wfd" path="res://music/good.mp3" id="1_bjrqh"]
+[ext_resource type="Script" uid="uid://bgjd32f07xiep" path="res://scripts/audio_stream_player_2d.gd" id="2_wttbj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_bjrqh")
+volume_db = 5.049
+autoplay = true
+script = ExtResource("2_wttbj")
+default_music = ExtResource("1_bjrqh")
