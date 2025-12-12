@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="A slime platformer"
-run/main_scene="uid://chcocu6nd6sf4"
+run/main_scene="uid://b768a0lnjwnv2"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

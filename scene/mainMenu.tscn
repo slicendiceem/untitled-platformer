@@ -1,4 +1,113 @@
-[gd_scene format=3 uid="uid://b768a0lnjwnv2"]
+[gd_scene load_steps=21 format=3 uid="uid://b768a0lnjwnv2"]
+
+[ext_resource type="Texture2D" uid="uid://b840lpnqsw0ks" path="res://assets/paralex_background.png" id="1_rhxxf"]
+[ext_resource type="FontFile" uid="uid://bwmrb75nhnytd" path="res://fonts/ComicNeueSansID.ttf" id="1_v8ol4"]
+[ext_resource type="FontFile" uid="uid://c8oi80sr4vhxo" path="res://fonts/Metal Glass.otf" id="2_rhxxf"]
+[ext_resource type="Texture2D" uid="uid://mkntnmla8uod" path="res://assets/slime sprite sheet.png" id="3_34t5y"]
+[ext_resource type="AudioStream" uid="uid://sxvy1d2x0wfd" path="res://music/good.mp3" id="6_835ab"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_835ab"]
+bg_color = Color(0.44705883, 0.019607844, 0.039215688, 1)
+corner_radius_top_left = 600
+corner_radius_top_right = 600
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2b2bh"]
+bg_color = Color(0.44705883, 0.019607844, 0.039215688, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3bexu"]
+bg_color = Color(0.44705883, 0.019607844, 0.039215688, 1)
+corner_radius_bottom_right = 600
+corner_radius_bottom_left = 600
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w60jl"]
+atlas = ExtResource("3_34t5y")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w16bw"]
+atlas = ExtResource("3_34t5y")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5330x"]
+atlas = ExtResource("3_34t5y")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxm2u"]
+atlas = ExtResource("3_34t5y")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0fxi"]
+atlas = ExtResource("3_34t5y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y40t8"]
+atlas = ExtResource("3_34t5y")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ddov"]
+atlas = ExtResource("3_34t5y")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvu6v"]
+atlas = ExtResource("3_34t5y")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw1al"]
+atlas = ExtResource("3_34t5y")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usqrj"]
+atlas = ExtResource("3_34t5y")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwsq1"]
+atlas = ExtResource("3_34t5y")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yir2m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w60jl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w16bw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5330x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxm2u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0fxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y40t8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ddov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvu6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw1al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usqrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwsq1")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,3 +116,88 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(960, 0)
+autoscroll = Vector2(10, 0)
+repeat_times = 3
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(613.00006, 364.00003)
+scale = Vector2(1.9229167, 1.9229165)
+texture = ExtResource("1_rhxxf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -76.0
+offset_right = 205.0
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_v8ol4")
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_835ab")
+text = "it is dungeon time"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_v8ol4")
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_2b2bh")
+text = "Options"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_v8ol4")
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_3bexu")
+text = "Run Away :("
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -335.5
+offset_top = 111.0
+offset_right = 335.5
+offset_bottom = 192.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_rhxxf")
+theme_override_font_sizes/font_size = 64
+text = "done'n'gen slime"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(184.00006, 348)
+scale = Vector2(7.3984385, 6.937501)
+sprite_frames = SubResource("SpriteFrames_yir2m")
+autoplay = "default"
+frame_progress = 0.21038704
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(962.00006, 350)
+scale = Vector2(7.3984385, 6.937501)
+sprite_frames = SubResource("SpriteFrames_yir2m")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.74354273
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_835ab")
+autoplay = true
