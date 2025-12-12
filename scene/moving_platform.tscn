@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://domj8rm4ws5rb"]
+
+[ext_resource type="Texture2D" uid="uid://bmt7slw18lr2f" path="res://assets/MovingPlatform.png" id="1_lenne"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ghav"]
+resource_local_to_scene = true
+size = Vector2(32, 6)
+
+[node name="MovingPlatform" type="AnimatableBody2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -14.5
+offset_right = 16.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lenne")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6ghav")
+one_way_collision = true
