@@ -4,11 +4,15 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -350.0
 
 var start_position = Vector2.ZERO
+var checkpoint: Vector2 = Vector2(-125, 100)
+
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+func _ready() -> void:
+	add_to_group("player")
 
 func respawn():
-	self.global_position = Vector2(-125, 100)
+	self.global_position = checkpoint
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
