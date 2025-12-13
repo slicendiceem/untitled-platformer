@@ -1,6 +1,7 @@
-[gd_scene load_steps=39 format=4 uid="uid://chcocu6nd6sf4"]
+[gd_scene load_steps=40 format=4 uid="uid://chcocu6nd6sf4"]
 
 [ext_resource type="PackedScene" uid="uid://dguxsc7qp2jgk" path="res://scene/player.tscn" id="1_5kiuu"]
+[ext_resource type="Script" uid="uid://bs0yk4xghh0p7" path="res://scene/game.gd" id="1_qpk70"]
 [ext_resource type="PackedScene" uid="uid://dk3o7m58k8xid" path="res://scene/big_arrow.tscn" id="1_xwcet"]
 [ext_resource type="Texture2D" uid="uid://25fhkvaeker7" path="res://assets/unified platforms.png" id="2_dbls1"]
 [ext_resource type="PackedScene" uid="uid://domj8rm4ws5rb" path="res://scene/moving_platform.tscn" id="3_33cqm"]
@@ -50,6 +51,23 @@ _data = {
 &"moving_platform_4up": SubResource("Animation_33cqm")
 }
 
+[sub_resource type="Animation" id="Animation_5g16k"]
+length = 3.0
+loop_mode = 2
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.47, 2.52, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1519, 165), Vector2(1519, 165), Vector2(1680.979, 165), Vector2(1680.979, 165)]
+}
+
 [sub_resource type="Animation" id="Animation_yq8tf"]
 resource_name = "platform"
 length = 3.0
@@ -68,10 +86,14 @@ tracks/0/keys = {
 "values": [Vector2(1167, 165), Vector2(1327, 165)]
 }
 
-[sub_resource type="Animation" id="Animation_5g16k"]
-length = 3.0
-loop_mode = 2
-step = 0.5
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_81276"]
+_data = {
+&"RESET": SubResource("Animation_5g16k"),
+&"platform": SubResource("Animation_yq8tf")
+}
+
+[sub_resource type="Animation" id="Animation_jrd6n"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -79,16 +101,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.47, 2.52, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1519, 165), Vector2(1519, 165), Vector2(1680.979, 165), Vector2(1680.979, 165)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_81276"]
-_data = {
-&"RESET": SubResource("Animation_5g16k"),
-&"platform": SubResource("Animation_yq8tf")
+"values": [Vector2(1360, 36)]
 }
 
 [sub_resource type="Animation" id="Animation_0lu6w"]
@@ -107,21 +123,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1360, 36), Vector2(1488, 36)]
-}
-
-[sub_resource type="Animation" id="Animation_jrd6n"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1360, 36)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jhlss"]
@@ -453,6 +454,7 @@ sources/2 = SubResource("TileSetAtlasSource_dbls1")
 sources/3 = SubResource("TileSetAtlasSource_33cqm")
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_qpk70")
 metadata/_edit_horizontal_guides_ = [-266.0]
 
 [node name="Player" parent="." instance=ExtResource("1_5kiuu")]
