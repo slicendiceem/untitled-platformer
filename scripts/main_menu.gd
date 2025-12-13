@@ -6,4 +6,4 @@ func _ready():
 	var menu_music = preload("res://music/good.mp3")
 	
 	# Play it through MusicManager
-	MusicManager.play_music(menu_music, -12.0)  # -12dB volume
+	MusicManager.play_music(menu_music)

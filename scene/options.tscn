@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://bnq51w4uujgak"]
+[gd_scene load_steps=20 format=3 uid="uid://bnq51w4uujgak"]
 
 [ext_resource type="Texture2D" uid="uid://b840lpnqsw0ks" path="res://assets/paralex_background.png" id="1_e53ll"]
 [ext_resource type="FontFile" uid="uid://bwmrb75nhnytd" path="res://fonts/ComicNeueSansID.ttf" id="2_x4vle"]
 [ext_resource type="Script" uid="uid://cqhc5wt6begyt" path="res://scripts/button.gd" id="3_bgq50"]
 [ext_resource type="FontFile" uid="uid://c8oi80sr4vhxo" path="res://fonts/Metal Glass.otf" id="4_3140y"]
 [ext_resource type="Texture2D" uid="uid://mkntnmla8uod" path="res://assets/slime sprite sheet.png" id="5_2nirn"]
+[ext_resource type="Script" uid="uid://wud2sxkfi1qp" path="res://scripts/volume_slider.gd" id="6_e53ll"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w60jl"]
 atlas = ExtResource("5_2nirn")
@@ -164,30 +165,27 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_835ab")
 text = "< Back"
 script = ExtResource("3_bgq50")
 
-[node name="Label2" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -265.0
-offset_top = 214.0
-offset_right = -107.0
-offset_bottom = 295.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_x4vle")
-theme_override_font_sizes/font_size = 64
-text = "Audio"
-
 [node name="Label3" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -271.0
-offset_top = 305.0
+offset_top = 234.0
 offset_right = -109.0
-offset_bottom = 386.0
+offset_bottom = 315.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_x4vle")
 theme_override_font_sizes/font_size = 64
 text = "Music"
+
+[node name="Music" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 261.0
+offset_right = 826.0
+offset_bottom = 291.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("6_e53ll")
+bus_name = "Master"

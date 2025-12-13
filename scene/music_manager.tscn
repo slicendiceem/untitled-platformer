@@ -6,7 +6,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-volume_db = 5.049
 autoplay = true
+bus = &"music"
 script = ExtResource("2_wttbj")
 default_music = ExtResource("1_bjrqh")

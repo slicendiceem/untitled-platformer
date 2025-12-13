@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://chcocu6nd6sf4"]
+[gd_scene load_steps=41 format=4 uid="uid://chcocu6nd6sf4"]
 
 [ext_resource type="PackedScene" uid="uid://dguxsc7qp2jgk" path="res://scene/player.tscn" id="1_5kiuu"]
 [ext_resource type="Script" uid="uid://bs0yk4xghh0p7" path="res://scripts/game.gd" id="1_qpk70"]
@@ -7,8 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://domj8rm4ws5rb" path="res://scene/moving_platform.tscn" id="3_33cqm"]
 [ext_resource type="PackedScene" uid="uid://cqa5y4j56na3l" path="res://scene/ani_moving_platform.tscn" id="3_xlg7c"]
 [ext_resource type="PackedScene" uid="uid://dvxm2i0yldcgu" path="res://scene/spike_traps.tscn" id="4_p1ry8"]
-[ext_resource type="PackedScene" uid="uid://cm217cok4m0f8" path="res://pause_menu.tscn" id="8_17rxn"]
-[ext_resource type="Script" uid="uid://d4hxk53dpukyy" path="res://pause_menu.gd" id="9_yq8tf"]
+[ext_resource type="PackedScene" uid="uid://cm217cok4m0f8" path="res://scene/pause_menu.tscn" id="8_17rxn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33cqm"]
 resource_local_to_scene = true
@@ -628,6 +627,5 @@ tile_set = SubResource("TileSet_xwcet")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("8_17rxn")]
-script = ExtResource("9_yq8tf")
 
 [editable path="Platforms/MovingPlatform"]

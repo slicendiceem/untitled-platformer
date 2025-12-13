@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cm217cok4m0f8"]
 
-[ext_resource type="Script" uid="uid://d4hxk53dpukyy" path="res://pause_menu.gd" id="1_nwcfo"]
+[ext_resource type="Script" uid="uid://d4hxk53dpukyy" path="res://scripts/pause_menu.gd" id="1_nwcfo"]
 [ext_resource type="FontFile" uid="uid://bwmrb75nhnytd" path="res://fonts/ComicNeueSansID.ttf" id="2_05uyy"]
 
 [node name="PauseMenu" type="Control"]

@@ -13,19 +13,10 @@ func _ready():
 		stream = default_music
 		play()
 
-func play_music(music: AudioStream, volume_db: float = -10.0):
+func play_music(music: AudioStream):
 	# Don't restart if same music is already playing
 	if stream == music and playing:
 		return
 	
 	stream = music
-	volume_db = volume_db
 	play()
-
-func stop_music(fade_time: float = 0.0):
-	if fade_time > 0:
-		var tween = create_tween()
-		tween.tween_property(self, "volume_db", -80.0, fade_time)
-		await tween.finished
-	
-	stop()
