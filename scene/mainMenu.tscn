@@ -190,7 +190,7 @@ offset_bottom = 192.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_rhxxf")
 theme_override_font_sizes/font_size = 64
-text = "done'n'gen slime"
+text = "slime'n dungeon"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(184.00006, 348)
