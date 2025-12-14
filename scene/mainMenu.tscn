@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b768a0lnjwnv2"]
+[gd_scene load_steps=25 format=3 uid="uid://b768a0lnjwnv2"]
 
 [ext_resource type="Script" uid="uid://vynuweqv5v1d" path="res://scripts/main_menu.gd" id="1_2b2bh"]
 [ext_resource type="Texture2D" uid="uid://b840lpnqsw0ks" path="res://assets/paralex_background.png" id="1_rhxxf"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://mkntnmla8uod" path="res://assets/slime sprite sheet.png" id="3_34t5y"]
 [ext_resource type="Script" uid="uid://gtqix02bf7bh" path="res://scripts/button_2.gd" id="4_2b2bh"]
 [ext_resource type="Script" uid="uid://nl2voyih7qad" path="res://scripts/button_3.gd" id="6_3bexu"]
+[ext_resource type="Script" uid="uid://bns55lpyac8kp" path="res://scripts/credits_button.gd" id="9_w60jl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_835ab"]
 bg_color = Color(0.44705883, 0.019607844, 0.039215688, 1)
@@ -206,3 +207,18 @@ sprite_frames = SubResource("SpriteFrames_yir2m")
 animation = &"new_animation"
 autoplay = "new_animation"
 frame_progress = 0.74354273
+
+[node name="CreditsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 573.0
+offset_right = 246.0
+offset_bottom = 623.0
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_v8ol4")
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_3bexu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3bexu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3bexu")
+text = "Credits"
+script = ExtResource("9_w60jl")
