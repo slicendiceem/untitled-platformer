@@ -1,0 +1,191 @@
+[gd_scene load_steps=20 format=3 uid="uid://bnq51w4uujgak"]
+
+[ext_resource type="Texture2D" uid="uid://b840lpnqsw0ks" path="res://assets/paralex_background.png" id="1_e53ll"]
+[ext_resource type="FontFile" uid="uid://bwmrb75nhnytd" path="res://fonts/ComicNeueSansID.ttf" id="2_x4vle"]
+[ext_resource type="Script" uid="uid://cqhc5wt6begyt" path="res://scripts/button.gd" id="3_bgq50"]
+[ext_resource type="FontFile" uid="uid://c8oi80sr4vhxo" path="res://fonts/Metal Glass.otf" id="4_3140y"]
+[ext_resource type="Texture2D" uid="uid://mkntnmla8uod" path="res://assets/slime sprite sheet.png" id="5_2nirn"]
+[ext_resource type="Script" uid="uid://wud2sxkfi1qp" path="res://scripts/volume_slider.gd" id="6_e53ll"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w60jl"]
+atlas = ExtResource("5_2nirn")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w16bw"]
+atlas = ExtResource("5_2nirn")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5330x"]
+atlas = ExtResource("5_2nirn")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxm2u"]
+atlas = ExtResource("5_2nirn")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0fxi"]
+atlas = ExtResource("5_2nirn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y40t8"]
+atlas = ExtResource("5_2nirn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ddov"]
+atlas = ExtResource("5_2nirn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvu6v"]
+atlas = ExtResource("5_2nirn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw1al"]
+atlas = ExtResource("5_2nirn")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usqrj"]
+atlas = ExtResource("5_2nirn")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwsq1"]
+atlas = ExtResource("5_2nirn")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yir2m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w60jl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w16bw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5330x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxm2u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0fxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y40t8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ddov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvu6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw1al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usqrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwsq1")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_835ab"]
+bg_color = Color(0.44705883, 0.019607844, 0.039215688, 1)
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(960, 0)
+autoscroll = Vector2(10, 0)
+repeat_times = 3
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(613.00006, 364.00003)
+scale = Vector2(1.9229167, 1.9229165)
+texture = ExtResource("1_e53ll")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -335.5
+offset_top = 111.0
+offset_right = 335.5
+offset_bottom = 192.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_3140y")
+theme_override_font_sizes/font_size = 64
+text = "slime'n Dungeon"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(121, 140)
+scale = Vector2(5.167969, 4.8459945)
+sprite_frames = SubResource("SpriteFrames_yir2m")
+autoplay = "default"
+frame_progress = 0.21038704
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1026, 135.99997)
+scale = Vector2(5.167969, 4.8459945)
+sprite_frames = SubResource("SpriteFrames_yir2m")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.74354273
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 555.0
+offset_right = 200.0
+offset_bottom = 613.0
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_x4vle")
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_835ab")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_835ab")
+theme_override_styles/hover = SubResource("StyleBoxFlat_835ab")
+text = "< Back"
+script = ExtResource("3_bgq50")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -271.0
+offset_top = 234.0
+offset_right = -109.0
+offset_bottom = 315.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_x4vle")
+theme_override_font_sizes/font_size = 64
+text = "Music"
+
+[node name="Music" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 261.0
+offset_right = 839.0
+offset_bottom = 291.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("6_e53ll")
+bus_name = "Master"
