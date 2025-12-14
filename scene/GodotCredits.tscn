@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5nov71w6cse3"]
+
+[ext_resource type="Script" uid="uid://btr6ubrvokoe0" path="res://scripts/GodotCredits.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://bwmrb75nhnytd" path="res://fonts/ComicNeueSansID.ttf" id="2_1juoh"]
+[ext_resource type="Texture2D" uid="uid://dfpvqkjg4qwej" path="res://assets/ECU.png" id="3_f5mr4"]
+
+[node name="GodotCredits" type="Node2D"]
+script = ExtResource("1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="CreditsContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Line" type="Label" parent="CreditsContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_right = 112.5
+offset_bottom = 58.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_1juoh")
+theme_override_font_sizes/font_size = 45
+text = "Credits line"
+horizontal_alignment = 1
+
+[node name="Ecu" type="Sprite2D" parent="."]
+position = Vector2(1024, 97)
+scale = Vector2(0.32541904, 0.325419)
+texture = ExtResource("3_f5mr4")
