@@ -8,6 +8,8 @@ func _ready():
 
 func _on_start_button_pressed():
 	# Load the game scene
+	self.global_position = Vector2(-125, 100)
+
 	var menu_scene = load(menu_scene_path)
 	
 	# Check if scene loaded successfully

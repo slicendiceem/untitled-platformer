@@ -67,9 +67,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3iln"]
-size = Vector2(52, 11)
+size = Vector2(44, 6)
 
 [node name="ani_moving_platform" type="AnimatableBody2D"]
+collision_mask = 0
+sync_to_physics = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0o5j4")
@@ -77,6 +79,6 @@ autoplay = "default"
 frame_progress = 0.17742807
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4.5)
+position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_j3iln")
 one_way_collision = true

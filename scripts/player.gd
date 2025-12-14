@@ -6,7 +6,6 @@ const JUMP_VELOCITY = -350.0
 var start_position = Vector2.ZERO
 var checkpoint: Vector2 = Vector2(-125, 100)
 
-
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 func _ready() -> void:
 	add_to_group("player")

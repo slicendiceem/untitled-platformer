@@ -1,6 +1,7 @@
 extends Area2D
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
 
 
 
@@ -13,5 +14,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
-		body.checkpoint = Vector2(3648, 160)
-		body.respawn()
+	 	
+		queue_free()
+
+		
